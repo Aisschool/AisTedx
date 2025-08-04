@@ -251,21 +251,21 @@
     const speakerGrid = document.getElementById('speakerGrid');
 
     const speakers = [
-      { name: "Sohini Shah", image: "1.png", description: "Nutritionist" },
-      { name: "Himanshi Rathi", image: "2.png", description: "Chess Player" },
-      { name: "Nirav Shah", image: "3.png", description: "Urban Town Planner" },
-      { name: "Rohit Purohit", image: "4.png", description: "Expert in AI and VR" },
-      { name: "Saumya Joshi", image: "5.png", description: "Film Maker and Poet" },
-      { name: "Sudhir Naik", image: "6.png", description: "Technologist and Innovator" },
-      { name: "Devang Nanavaty", image: "7.png", description: "Senior Advocate, Gujarat High Court" },
-      { name: "Radhika Bhandari", image: "8.png", description: "Pioneer in Aviation and Education" }
+      { name: "Sohini Shah", image: "images/Speakers/1.png", description: "Nutritionist" },
+      { name: "Himanshi Rathi", image: "images/Speakers/2.png", description: "Chess Player" },
+      { name: "Nirav Shah", image: "images/Speakers/3.png", description: "Urban Town Planner" },
+      { name: "Rohit Purohit", image: "images/Speakers/4.png", description: "Expert in AI and VR" },
+      { name: "Saumya Joshi", image: "images/Speakers/5.png", description: "Film Maker and Poet" },
+      { name: "Sudhir Naik", image: "images/Speakers/6.png", description: "Technologist and Innovator" },
+      { name: "Devang Nanavaty", image: "images/Speakers/7.png", description: "Senior Advocate, Gujarat High Court" },
+      { name: "Radhika Bhandari", image: "images/Speakers/8.png", description: "Pioneer in Aviation and Education" }
     ];
 
 
     speakers.forEach(speaker => {
       speakerGrid.innerHTML += `
     <div class="bg-gray-100 rounded-xl p-2 border border-gray-200 text-center shadow hover:shadow-lg transition transform hover:scale-105">
-      <img src="/images/Speakers/${speaker.image}" alt="${speaker.name}" class="mx-auto h-50  w-50 object-cover mb-1 rounded-full">
+      <img src="A/images/Speakers/${speaker.image}" alt="${speaker.name}" class="mx-auto h-50  w-50 object-cover mb-1 rounded-full">
       <h3 class="text-red-600 font-semibold text-lg">${speaker.name}</h3>
       <p class="text-gray-600 text-sm mt-2 h-12 overflow-hidden font-bold">${speaker.description}</p>
     </div>
