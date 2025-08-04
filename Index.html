@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEDxAhmedabadIntSchool</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-red-200 shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold">
+        <span class="text-red-600">TEDx</span>AhmedabadIntSchool
+      </div>
+      <div class="hidden md:flex space-x-8" id="desktopMenu"></div>
+      <button class="md:hidden" id="menuToggle"><i data-lucide="menu" class="w-6 h-6 text-gray-700"></i></button>
+    </div>
+    <div class="hidden md:hidden bg-white border-t border-red-200" id="mobileMenu">
+      <div class="container mx-auto px-4 py-4 space-y-4" id="mobileMenuItems"></div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home"
+    class="min-h-screen bg-gradient-to-br from-red-600 to-red-700 text-white text-center px-4 relative bg-contain bg-center"
+    style="background-image: url('images/herobanner.png');">
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-red-700 bg-opacity-60"></div>
+
+    <!-- Centered content container -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen">
+      <!-- TEDx badge -->
+      <div
+        class="inline-flex items-center gap-2 text-xl bg-white/20 border border-white/30 rounded-full px-6 py-2 mb-6">
+        <i data-lucide="zap" class="w-4 h-4"></i>
+        <span>Official TEDx Event</span>
+      </div>
+
+      <!-- Main heading -->
+      <h1 class="text-8xl font-bold mb-4">Future Frontiers</h1>
+      <h2 class="text-4xl mb-2">TEDxAhmedabadIntSchool</h2>
+
+      <!-- Subtitle -->
+      <p class="text-xl max-w-2xl mx-auto mb-6 text-white/80">
+        Exploring innovation, tech & human potential in the digital age.
+      </p>
+
+      <!-- Date & location -->
+      <div
+        class="flex flex-col sm:flex-row justify-center gap-4 mb-6 text-lg bg-white/20 p-4 rounded-xl shadow-lg text-white">
+        <div class="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-lg border border-white/30 text-white">
+          <i data-lucide="calendar" class="w-5 h-5"></i>
+          <span>August 30, 2025</span>
+        </div>
+        <div onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/30 text-white bg-white/20 
+         cursor-pointer transition duration-200 hover:bg-white hover:text-black hover:shadow-md">
+          <i data-lucide="map-pin" class="w-5 h-5"></i>
+          <span class="font-semibold">JB Auditorium</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- About -->
+  <section id="about" class="py-20 bg-gray-50 px-4">
+    <div class="max-w-4xl mx-auto text-center mb-12">
+      <h2 class="text-4xl font-bold text-red-600">About Future Frontiers</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-stretch">
+      <!-- Card 1 -->
+      <div class="flex flex-col bg-white p-6 rounded-xl border border-gray-200 shadow h-full">
+        <div class="flex items-center gap-2 mb-4">
+          <i data-lucide="cpu" class="w-6 h-6 text-red-600"></i>
+          <h3 class="text-2xl font-semibold text-red-600">What is TEDx?</h3>
+        </div>
+        <div class="flex-1">
+          <p class="text-gray-700 mb-4 text-lg">
+            TEDx events are independently organized TED-like conferences that bring together local voices to spark
+            meaningful conversations and inspire action.
+          </p>
+          <p class="text-gray-700 text-lg">
+            TEDxAhmedabadIntSchool showcases innovative ideas from our community and beyond.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex flex-col bg-white p-6 rounded-xl border border-gray-200 shadow h-full">
+        <div class="flex items-center gap-2 mb-4">
+          <i data-lucide="rocket" class="w-6 h-6 text-red-600"></i>
+          <h3 class="text-2xl font-semibold text-red-600">Future Frontiers Theme</h3>
+        </div>
+        <div class="flex-1">
+          <p class="text-gray-700 mb-4 text-lg">
+            “Future Frontiers” explores innovation, AI, space technology, and bold ideas that are shaping the world of
+            tomorrow.</p>
+          </p>
+          <p class="text-gray-700 text-lg">
+            Let’s push the limits of imagination and discovery together.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Speakers -->
+  <section id="speakers" class="py-20 bg-white px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-red-600">Featured Speakers</h2>
+    </div>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="speakerGrid">
+    </div>
+  </section>
+
+  <!-- Core Team -->
+  <!-- Core Team -->
+  <section id="team" class="py-20 bg-gray-50 px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-red-600">Core Team</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <!-- Team Member -->
+      <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow border">
+        <img src="images/CoreTeam/NS.png" alt="NS" class="rounded-xl object-cover object-top h-80 w-full mb-4">
+        <p class="text-center font-semibold text-gray-800">Nishka Shah (Marketing)</p>
+      </div>
+
+      <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow border">
+        <img src="images/CoreTeam/VS.png" alt="VS" class="rounded-xl object-cover object-top h-80 w-full mb-4">
+        <p class="text-center font-semibold text-gray-800">Vivaan Shodhan (Sponsorship and Finances)</p>
+      </div>
+
+      <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow border">
+        <img src="images/CoreTeam/DP.png" alt="DP" class="rounded-xl object-cover object-top h-80 w-full mb-4">
+        <p class="text-center font-semibold text-gray-800">Sponsorship and Finances</p>
+      </div>
+
+      <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow border">
+        <img src="images/CoreTeam/VN.png" alt="Virika" class="rounded-xl object-cover object-top h-80 w-full mb-4">
+        <p class="text-center font-semibold text-gray-800">Virika Nanda (Marketing)</p>
+      </div>
+
+      <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow border">
+        <img src="images/CoreTeam/JA.png" alt="JA" class="rounded-xl object-cover object-top h-80 w-full mb-4">
+        <p class="text-center font-semibold text-gray-800">Logistics and Speaker Curation</p>
+      </div>
+
+      <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow border">
+        <img src="images/CoreTeam/RP.png" alt="RP" class="rounded-xl object-cover object-top h-80 w-full mb-4">
+        <p class="text-center font-semibold text-gray-800">Logistics and Speaker Curation</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Sponsors -->
+  <section id="sponsors" class="py-20 bg-white px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-red-600">Sponsors & Partners</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto" id="sponsorGrid"></div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-gray-50 px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-red-600">Get in Touch</h2>
+    </div>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+
+      <!-- Contact Info -->
+      <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-lg h-full flex flex-col justify-center">
+        <h2 class="text-4xl font-semibold text-red-600 mb-1">Contact Info</h2>
+        <div class="space-y-2 text-lg flex-1 flex flex-col justify-center">
+          <p class="text-xl"><i data-lucide="mail"
+              class="inline w-5 h-5 text-red-600 mr-2"></i>tedx@ahmedabadintschool.edu</p>
+          <p class="text-xl"><i data-lucide="phone" class="inline w-5 h-5 text-red-600 mr-2"></i>09327035107</p>
+          <p class="text-lg"><i data-lucide="map-pin" class="inline w-4 h-5 text-red-600 mr-2"></i>JB Auditorium,
+            Ahmedabad, Gujarat 380009</p>
+        </div>
+      </div>
+
+
+      <!-- Embedded Google Map -->
+      <div class="rounded-xl overflow-hidden border border-gray-200 shadow-lg">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.2218780891724!2d72.5430742!3d23.0233145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f93f447e71%3A0xc7c7725fa1d0e2dd!2sJB%20Auditorium%2C%20Ahmedabad!5e0!3m2!1sen!2sin!4v1692631807095!5m2!1sen!2sin"
+          width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold mb-2"><span class="text-red-500">TEDx</span>AhmedabadIntSchool</h3>
+      <p class="text-gray-400 mb-4">© 2025. Exploring the Future Frontiers.</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    lucide.createIcons();
+
+    const sections = ['home', 'about', 'speakers', 'team', 'sponsors', 'contact'];
+    const menu = document.getElementById('desktopMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileItems = document.getElementById('mobileMenuItems');
+    const toggleBtn = document.getElementById('menuToggle');
+
+    // Nav buttons
+    sections.forEach(sec => {
+      const label = sec === 'team' ? 'Core Team' : sec.charAt(0).toUpperCase() + sec.slice(1);
+      const link = `<button onclick="document.getElementById('${sec}').scrollIntoView({behavior:'smooth'});" class="capitalize text-gray-700 hover:text-red-600 font-medium">${label}</button>`;
+      menu.innerHTML += link;
+      mobileItems.innerHTML += link;
+    });
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      toggleBtn.innerHTML = mobileMenu.classList.contains('hidden')
+        ? '<i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>'
+        : '<i data-lucide="x" class="w-6 h-6 text-gray-700"></i>';
+      lucide.createIcons();
+    });
+
+    // Speaker Cards
+    const speakerGrid = document.getElementById('speakerGrid');
+
+    const speakers = [
+      { name: "Sohini Shah", image: "1.png", description: "Nutritionist" },
+      { name: "Himanshi Rathi", image: "2.png", description: "Chess Player" },
+      { name: "Nirav Shah", image: "3.png", description: "Urban Town Planner" },
+      { name: "Rohit Purohit", image: "4.png", description: "Expert in AI and VR" },
+      { name: "Saumya Joshi", image: "5.png", description: "Film Maker and Poet" },
+      { name: "Sudhir Naik", image: "6.png", description: "Technologist and Innovator" },
+      { name: "Devang Nanavaty", image: "7.png", description: "Senior Advocate, Gujarat High Court" },
+      { name: "Radhika Bhandari", image: "8.png", description: "Pioneer in Aviation and Education" }
+    ];
+
+
+    speakers.forEach(speaker => {
+      speakerGrid.innerHTML += `
+    <div class="bg-gray-100 rounded-xl p-2 border border-gray-200 text-center shadow hover:shadow-lg transition transform hover:scale-105">
+      <img src="/images/Speakers/${speaker.image}" alt="${speaker.name}" class="mx-auto h-50  w-50 object-cover mb-1 rounded-full">
+      <h3 class="text-red-600 font-semibold text-lg">${speaker.name}</h3>
+      <p class="text-gray-600 text-sm mt-2 h-12 overflow-hidden font-bold">${speaker.description}</p>
+    </div>
+  `;
+    });
+
+
+    // Sponsors
+
+    const sponsorGrid = document.getElementById('sponsorGrid');
+    const sponsors = [
+      { name: "KK Jewels", logo: "images/Sponsors/3.png", description: "Premium jewelry and luxury accessories" },
+      { name: "Capital 8", logo: "images/Sponsors/6.png", description: "Investment and financial services" },
+      { name: "Savvy Group", logo: "images/Sponsors/4.png", description: "Real estate development and construction" },
+      { name: "Double Tree by Hilton", logo: "images/Sponsors/5.png", description: "World-class hospitality and accommodation" },
+      { name: "Sharma Hyundai", logo: "images/Sponsors/2.png", description: "Leading automotive dealership and services" },
+      { name: "Swelore Engineering Pvt Ltd", logo: "images/Sponsors/1.png", description: "Innovative engineering solutions and technology" }
+    ];
+
+    sponsors.forEach(s => {
+      sponsorGrid.innerHTML += `
+    <div class="bg-white rounded-xl p-6 border border-gray-200 text-center shadow hover:shadow-lg transition transform hover:scale-105 h-full min-h-[300px] flex flex-col justify-between">
+      
+        <img src="${s.logo}" alt="${s.name}" class="w-25 h-25 object-cover mx-auto" />
+        <h4 class="font-semibold text-gray-900 mt-1 mb-0">${s.name}</h4>
+      
+      <p class="text-xl text-gray-600 mt-2">${s.description}</p>
+    </div>`;
+    });
+
+
+  </script>
+</body>
+
+</html>
